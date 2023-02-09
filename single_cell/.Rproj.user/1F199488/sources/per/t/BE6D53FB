@@ -1,0 +1,26 @@
+{
+    "id": "BE6D53FB",
+    "path": "~/Documents/Honours/All_Scripts/MAGEE2/single_cell/single_cell_plots.R",
+    "project_path": "single_cell_plots.R",
+    "type": "r_source",
+    "hash": "2616846870",
+    "contents": "",
+    "dirty": false,
+    "created": 1675845649160.0,
+    "source_on_save": false,
+    "relative_order": 1,
+    "properties": {
+        "source_window_id": "",
+        "Source": "Source",
+        "cursorPosition": "184,9",
+        "scrollLine": "177"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1675869222,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1675869222428,
+    "read_only": false,
+    "read_only_alternatives": []
+}

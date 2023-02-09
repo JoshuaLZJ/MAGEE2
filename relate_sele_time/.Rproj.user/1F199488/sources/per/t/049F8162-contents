@@ -1,0 +1,28 @@
+library(ggplot2)
+
+#for relate selection time for HGDP east asia
+
+sele_time = read.csv('relate_sele_time.csv')
+
+sele_time_ticks = c(seq(200, 1000, by=200), 
+                    seq(2000, 10000, by=2000),
+                    seq(15000, 25000, by=5000), 
+                    50000, 100000, 1000000)
+
+sele_time_labels = c(formatC(1:5 * 200, format="d", big.mark=","), 
+                     formatC(1:5 * 2000, format="d", big.mark=","), 
+                     formatC(3:5 * 5000, format="d", big.mark=","), 
+                     "50,000", "100,000", "1,000,000")
+
+png('relate_selection_timepoint.png', width=2480, height=1395)
+ggplot(sele_time, aes(x=log10(Timepoint), y=Log10_pvalue)) + 
+  geom_line() + 
+  geom_point(size=5) +
+  geom_hline(yintercept=log10(0.05) ,linetype = "dashed", color='red') +
+  geom_text(aes(0, log10(0.05), label = "p-value=0.05", hjust=-0.25, vjust = - 1, color='red'), size=15, show.legend=FALSE) +
+  scale_x_continuous(labels = sele_time_labels, breaks = log10(sele_time_ticks)) + 
+  theme(axis.text.x=element_text(size=30 ,hjust=1 ,angle=75), 
+        axis.text.y=element_text(size=40),
+        axis.title=element_text(size=40),
+        axis.line=element_line(size=2))
+dev.off()
